@@ -346,21 +346,15 @@ def parse_args():
 
     # Number of questions in the dataset
     question_num_dict = {
-        'ASSIST09': 15700,
         'EdNet': 11848,
-        'ASSIST12': 47000,
         'JunYi': 669
     }
 
     # Corresponding pkl file for the dataset model, QE for question_embedding
     pkl_dict = {
         "QE": {
-            "DKT_ASSIST09": 'DKT_ASSIST09_QE_0.737.pkl',
             "DKT_EdNet": 'DKT_EdNet_QE_0.756.pkl',
-            "SAKT_ASSIST09": 'SAKT_ASSIST09_QE_0.751.pkl',
             "SAKT_EdNet": 'SAKT_EdNet_QE_0.757.pkl',
-            "DKT_ASSIST12": 'DKT_ASSIST12_QE_0.752.pkl',
-            "SAKT_ASSIST12": 'SAKT_ASSIST12_QE_0.753.pkl',
             "DKT_JunYi": 'DKT_JunYi_QE_0.782.pkl',
             "SAKT_JunYi": 'SAKT_JunYi_QE_0.784.pkl'
         }
@@ -400,7 +394,7 @@ def parse_args():
                         default=action_num)
     # Use discounted return or reward return (greedy strategy)
     parser.add_argument("--isReturn", type=bool,
-                        default=False)
+                        default=True)
     # Type of policy network RCKTE or simple MLP
     parser.add_argument("--policy_type", type=str,
                         default='RCKTE')
